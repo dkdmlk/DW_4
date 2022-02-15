@@ -3,106 +3,108 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: rgba(99, 99, 99, 0.521);
-}
 .container {
-  box-sizing: border-box;
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: gray;
 }
-footer {
-  height: 100px;
+header {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  /* 백그라운드 칼러를이용해서 크기조절 */
+  background-image: linear-gradient(rgba(4, 10, 20, 0.8), rgba(4, 10, 20, 0.8)),
+    url(41-413431_-.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.nav {
   display: flex;
+  padding: 2% 6%;
   justify-content: space-between;
-  background-color: rgb(19, 18, 18);
   align-items: center;
 }
-.logo {
-  width: 100%;
-  height: 100px;
-  background-color: black;
+.nav img {
+  width: 120px;
+  height: 90px;
+  background-color: red;
+}
+.nav-links ui li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+}
+.nav-links ui li a {
   color: white;
-  font-size: 50px;
-  padding: 10px 5px 10px;
-  display: flex;
-  justify-content: left;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 800;
 }
-.logo img {
-  width: 40px;
-  height: 60px;
+.nav-links ui li:hover {
+  transition: 700ms;
+  background-color: red;
+  border-radius: 5px;
 }
-.form-form {
-  display: flex;
-}
-.formcon {
-  left: auto;
-  position: relative;
-  top: auto;
-  bottom: auto;
-  width: 300px;
-  height: 800px;
-  display: flex;
-  background-color: rgb(255, 0, 0);
-}
-.formcon2 {
-  position: relative;
-  top: auto;
-  bottom: auto;
-  width: 300px;
-  height: 800px;
-  display: flex;
-  background-color: rgba(255, 145, 0, 0.815);
-}
-.formcon3 {
-  position: relative;
-  top: auto;
-  bottom: auto;
-  width: 300px;
-  height: 800px;
-  display: flex;
-  background-color: rgb(255, 251, 0);
-}
-.formcon4 {
-  position: relative;
-  top: auto;
-  bottom: auto;
-  width: 300px;
-  height: 800px;
-  display: flex;
-  background-color: rgb(0, 255, 42);
-}
-.main-backgroud {
-  width: 100%;
-  height: 980px;
-  background-image: url(pexels-mitchell-luo-3735677.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.main {
-  padding-top: 200px;
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  text-align: center;
   color: white;
+}
+.text-box h1 {
   font-size: 60px;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.info {
-  padding-top: 150px;
+.text-box p {
+  margin-top: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.text-box a {
+  text-decoration: none;
   color: white;
+  border: 1px solid white;
+  border-radius: 5px;
   font-size: 20px;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+  padding: 10px 32px;
 }
-.main-button {
-  padding: 15px;
-  font-size: 20px;
-  margin-top: 100px;
+.text-box a:hover {
+  transition: 700ms;
+  background-color: rgb(0, 0, 0);
+  color: red;
+}
+.card-container {
+  display: flex;
+  width: 80%;
+  height: 400px;
+}
+.card-item {
+  height: 400px;
+  padding: 25px;
+  color: white;
+  position: relative;
+  /* 아이템에 flex:1을하면 아이템들이 동일한 크기를 가지게 됨. */
+  flex: 1;
+  transition: 0.6s;
+}
+.card-item:hover {
+  flex-grow: 2.5;
+}
+.card-item:hover .caption {
+  /* none의 반대는 black */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+}
+.card-item {
+  background-color: black;
+}
+.card-item img {
+  position: absolute;
+  width: 200px;
+  right: 0;
+  bottom: 0;
+}
+.caption {
+  display: none;
+  font-size: 18px;
+  margin: 28px 0;
+  width: 230px;
 }
