@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: 0;
+      }
+      .contianer {
+        height: 200vh;
+      }
+      .header {
+        width: 100%px;
+        height: 600px;
+        background-image: linear-gradient(
+            rgba(255, 148, 47, 0.8),
+            rgba(0, 0, 0, 0.8)
+          ),
+          url(41-413431_-.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      .nav {
+        position: relative;
+        display: flex;
+        padding: 2% 12%;
+        justify-content: space-between;
+      }
+      .nav .img {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 10px;
+        background: radial-gradient(
+          circle at 42% 100%,
+          #e7c374 4%,
+          #fffffe 30%,
+          #e6dd8e 62%,
+          #ffd700 85%,
+          #ffffff
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imgbox1 {
+        border: 2px solid rgb(255, 255, 255);
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imgbox2 {
+        border: 2px solid rgb(245, 194, 174);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imgbox3 {
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgb(240, 237, 48);
+        width: 20px;
+        height: 20px;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: auto;
+      }
+      .nav-links li:hover {
+        background-color: black;
+        border-radius: 6px;
+        transition: 0.8s;
+      }
+      .nav-links li a {
+        color: white;
+        margin: 10px 40px;
+        font-size: 36px;
+      }
+      .cardcontainer {
+        width: 100%;
+        height: 600px;
+        background-color: black;
+      }
+      .card {
+        width: 200px;
+        position: relative
+      }
+      .card img{
+          width: 200px;
+          height: 200px;
+      }
+      .card3{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+       
+        transition: 10s;
+      }
+      .card:hover .card3{
+        display: block;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contianer">
+      <div class="header" id="tatle">
+        <div class="nav">
+          <div class="img">
+            <div class="imgbox1">
+              <div class="imgbox2">
+                <div class="imgbox3"></div>
+              </div>
+            </div>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#tatle">HOME</a></li>
+            <li><a href="#center">Center</a></li>
+            <li><a href="#">LAST</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cardcontainer" id="center">
+        <div class="card">
+          <img src="파이리.gif" alt="" class="card2"/>
+          <img src="리자드.jpg" alt="" class="card3"/>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
