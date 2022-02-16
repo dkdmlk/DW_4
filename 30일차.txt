@@ -1,0 +1,9 @@
+-- 아이콘
+https://fontawesome.com/
+아이콘 사잍,
+
+<style>
+</style>
+<script src="https://kit.fontawesome.com/ec2e6610a2.js"
+crossorigin="anonymous"></script>
+스타일태그 뒤에 들어가 사용
