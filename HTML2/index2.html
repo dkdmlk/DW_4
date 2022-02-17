@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 1200px;
+      }
+      .header {
+        width: 100%;
+        height: 500px;
+        background-image: linear-gradient(
+            rgba(255, 148, 47, 0.8),
+            rgba(0, 0, 0, 0.8)
+          ),
+          url(41-413431_-.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+      .nav {
+        width: 100%;
+        height: 200px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav .img {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img-box {
+        width: 60px;
+        height: 60px;
+        border: 2px solid rgb(253, 166, 156);
+        background-color: black;
+        border-radius: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imginnerbox {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgb(247, 255, 134);
+        border-radius: 100px;
+        background: radial-gradient(
+          circle at 42% 100%,
+          #2209ff 4%,
+          #4dddf7 30%,
+          #89fbff 62%,
+          #b923ff 85%,
+          #b7eec5
+        );
+      }
+      .linkbox {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 30px;
+      }
+      .linkbox li {
+        margin: 5px 40px;
+      }
+      .linkbox li a {
+        color: white;
+      }
+      .linkbox li:hover {
+        background-color: red;
+        border-radius: 6px;
+        transition: 0.8s;
+      }
+      .header-textbox {
+        text-align: center;
+        margin: 50px;
+      }
+      .header-textbox h1 {
+        font-size: 60px;
+        color: orangered;
+      }
+      .body {
+        display: flex;
+        padding: 2% 5%;
+        background: gray;
+      }
+      .leftbodybox {
+        width: 25%;
+        height: 1000px;
+        margin: 0 5%;
+        background-color: #000000;
+        box-sizing: border-box;
+      }
+      .leftboxui {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .leftboxui li {
+        margin: 50px;
+        font-size: 24px;
+      }
+      .leftboxui li a {
+        color: white;
+      }
+      .bodyboximg {
+        height: 30%;
+        width: 100%;
+      }
+      .centerbodybox {
+        width: 65%;
+        height: 1000px;
+        background-color: #ffffff;
+        display: flex;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+      .card-item {
+        position: relative;
+        flex: 100%;
+        height: 300px;
+        background-color: rgb(82, 79, 248);
+        transition: 0.6s;
+      }
+      .card-item h2 {
+        color: rgb(255, 255, 255);
+        font-size: 36px;
+        text-align: center;
+      }
+      .card-item img {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 0;
+        bottom: 0;
+      }
+      .card-item:hover .cardimg {
+        display: none;
+      }
+      .card-item:hover .caption {
+        display: block;
+      }
+      .caption {
+        display: none;
+      }
+      .caption p {
+        font-size: 24px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+      }
+      .footer {
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/ec2e6610a2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header" id="HOME">
+        <div class="nav">
+          <div class="img">
+            <div class="img-box">
+              <div class="imginnerbox"></div>
+            </div>
+          </div>
+          <ui class="linkbox">
+            <li>
+              <a href="#HOME"><i class="fa-solid fa-house"></i>HOME</a>
+            </li>
+            <li>
+              <a href="#memo"><i class="fa-solid fa-note"></i>Memo</a>
+            </li>
+            <li><a href="#end">End</a></li>
+          </ui>
+        </div>
+        <div class="header-textbox">
+          <h1>안녕하세요</h1>
+        </div>
+      </div>
+      <div class="body" id="memo">
+        <div class="leftbodybox">
+          <img src="꼬부기.gif" alt="" class="bodyboximg" />
+          <ul class="leftboxui">
+            <li>
+              <a href="#HOME"><i class="fa-solid fa-house"></i>HOME</a>
+            </li>
+            <li><a href="#memo">Memo</a></li>
+            <li><a href="#end">End</a></li>
+          </ul>
+        </div>
+        <div class="centerbodybox">
+          <div class="card-item">
+            <h2>파이리의 상태가?</h2>
+            <div class="caption">
+              <p>파이리가 리자드로 진화 했습니다!</p>
+              <img src="리자드.jpg" alt="" />
+            </div>
+            <img src="파이리.jpg" alt="" class="cardimg" />
+          </div>
+          <div class="card-item">
+            <h2>꼬부기의 상태가?</h2>
+            <div class="caption">
+              <p>꼬부기가 어니부기로 진화 했습니다!</p>
+              <img src="어니부기.jpg" alt="" />
+            </div>
+            <img src="꼬북이.jpg" alt="" class="cardimg" />
+          </div>
+          <div class="card-item">
+            <h2>이상해씨의 상태가?</h2>
+            <div class="caption">
+              <p>이상해씨가 이상해풀로 진화 했습니다!</p>
+              <img src="이상해풀.jpg" alt="" />
+            </div>
+            <img src="이상해씨.jpg" alt="" class="cardimg" />
+          </div>
+        </div>
+      </div>
+      <div class="footer" id="end">
+        <div class="img">
+          <div class="img-box">
+            <div class="imginnerbox"></div>
+          </div>
+        </div>
+        <ui class="linkbox">
+          <li>
+            <a href="#HOME"><i class="fa-solid fa-house"></i>HOME</a>
+          </li>
+          <li>
+            <a href="#memo"><i class="fa-solid fa-note"></i>Memo</a>
+          </li>
+          <li><a href="#end">End</a></li>
+        </ui>
+      </div>
+    </div>
+  </body>
+</html>
