@@ -1,0 +1,40 @@
+animation (정의): 
+    이름을 성정해야 애니메이션을 재생할수 있다.(ex:rockat)
+    linear : 처음부터 끝까지 부드럽게 일정한 속도로 진행
+    infinite : 애니매이션 무한 반복
+
+문법
+animation: 변수명 시간 linear infinite;
+      
+
+@:어노테이션 (구현)
+애니메이션을 줌
+ @keyframes 변수명(anumation) {
+     0% {
+        opacity: 0;
+        bottom: 0;
+
+    }
+     50% {
+       opacity: 0.5
+    }
+    100% {
+        bottom: 105%;
+        opacity: 1;
+    }
+
+flex:컨테이너와 아이템 으로 구성
+
+css
+- diplay : flex
+- justify-content: space-between
+
+아이템 css
+- flex-basis
+- flex-grow
+- flex
+
+flex 는 컨테이너와 아이템으로 구성
+컨테이너 기능과 아이템 기능으로 나뉨
+컨테이너는 아이템 배치
+아이템은 각각아이템 크기,넓이 설정
