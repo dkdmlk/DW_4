@@ -4,4 +4,9 @@
 - JavaScript (버전업이 빠름)
 (판업창 구현,서버 데이터 처리)
 
--ES 5
+-JavaScript 버전 5(범용성)
+-JavaScript 버전 6
+ React, Angular , Vue(버전6 이상으로 구현된 자바스크립트)
+ 
+ JavaScript 버전5, Node.js 설치해서 JavaSCript 공부
+ 바닐라 JS 공부
