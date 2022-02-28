@@ -1,0 +1,7 @@
+-정적 웹
+(HTML + CSS + JavaScript)
+- scss(기존 css 버전 업)
+- JavaScript (버전업이 빠름)
+(판업창 구현,서버 데이터 처리)
+
+-ES 5
