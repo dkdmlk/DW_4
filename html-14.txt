@@ -37,5 +37,6 @@ ls : 현재 경로 파일 및 폴더 확인
 cd : 폴더 접속
 pwd : 현재경로확인
 clear : 명령어 내용 삭제
+운영체제 : 윈도우, 맥OS, 리눅스...
 
 ex)ls - > cd .\2day\ ->  node index (앞자리 tap)
