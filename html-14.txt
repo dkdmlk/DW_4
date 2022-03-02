@@ -36,4 +36,4 @@ console.log(information.age);
 ls : 현재 경로 파일 및 폴더 확인
 cd : 폴더 접속
 
-ex)ls - > cd .\2day\ ->  node index
+ex)ls - > cd .\2day\ ->  node index (앞자리 tap)
