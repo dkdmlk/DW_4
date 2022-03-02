@@ -1,0 +1,19 @@
+1. item:nth-child(1)
+    아이템 마자 margin 값을 지정.
+
+2. display : inline-block
+    (flex말고 inline-block 으로도 가능)
+    
+3. grid
+    flex는 1차원 적인 UI(한 방향 레이아웃)
+    grid는 2차원 적인 UI(두 방향 레이아웃)
+
+-----------------------------------------
+        JSON(데이터포멧)
+        (전송구역)          (서버)
+    HTML    <->     JAVA    <->  DB
+(클라이언트)        node.js       
+                   python등
+
+전송구역으로 보낼때 JSOn형식으로 보내야함
+JSON(Java Script Object Notation)
