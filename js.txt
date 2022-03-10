@@ -1,0 +1,62 @@
+json :
+데이터를 전송할 때 많이 사용되는 경량의 DATA 교환 형식
+장점 :
+    1. 문서화를 할 수 있다.
+    2. 재사용 가능.
+
+DATA 형식
+1. 중괄호
+2. key(중복 x), value(중복 o) 구성
+3. value(문자형, 정수형, 논리형, 배열, json...)
+ex)
+emp = {
+    empno : 7369,
+    ename : "SMITH",
+    mgr : [7902, 7370]
+}
+//SMITH 사수 직업과 급여를 알고 싶다.
+emp = {
+    empno : 7369,
+    ename : "SMITH",
+    mgr : [{
+        empno:7902,
+        sal:3000
+        job:"CRERK"
+    }, {
+        empno:7370,
+        sal:5000
+        job:"CRERk"
+    }]
+}
+//emp
+SMITH의 직업과급여
+SMITH의 부서이름
+SMITH의 부서 인원수
+
+emp={
+    empno : 7369,
+    ename : "SMITH",
+    job : 'CRERK', 
+    sal : 3000,
+    dname : "SALES" ,
+    dname_ count : 5
+}
+
+SMITH의 사원번호와 급여
+SMITH의 사수는 3명이고 사수의 번호와 직업을 알고싶다.
+
+emp = {
+    empno : 7369,
+    sal : 3000
+    mgr : [{
+        empno: 7902,
+        job : "CRERK"
+    },{
+        empno: 7370,
+        job: "CRERK"
+    },{
+        empno : ,
+        job : ""
+    }
+    ]
+}

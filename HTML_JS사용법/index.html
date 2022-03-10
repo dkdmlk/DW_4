@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .blue {
+        background-color: blue;
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+      }
+      .red {
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatainer">
+      <!-- onclik : javascript에 정의한 함수이름 위치 -->
+      <div id="blue" class="blue" onclick="changeColor()"></div>
+      <div class="red" onclick="hide()"></div>
+      <div class="clear">
+        <button onclick="setInitalization()">ALL CLEAR</button>
+      </div>
+      <div class="form">
+        <input id="userPassword" type="password" value="" />
+        <input
+          id="userPassword2"
+          type="password"
+          value=""
+          onkeyup="chekUserId()"
+        />
+      </div>
+    </div>
+    <script>
+      function chekUserId() {
+        var userPassword = document.getElementById('userPassword').value;
+        var userPassword2 = document.getElementById('userPassword2').value;
+        if (userPassword == userPassword2) {
+          confirm('비밀번호가 일치합니다.');
+        }
+      }
+      //함수(메소드)
+      //javascript 함수는 리턴타입이 없다.
+      function changeColor() {
+        //바닐라 스크립트 문법
+        var color = document.getElementById('blue').style.backgroundColor;
+        if (color == 'black') {
+          alert('이미 배경색깔은 검은색입니다.');
+          return 0;
+        }
+        document.getElementById('blue').style.backgroundColor = 'black';
+        console.log(color);
+      }
+      //함수이름은 동사! 명사x
+      function hide() {
+        document.getElementById('blue').style.display = 'none';
+      }
+      function setInitalization() {
+        document.getElementById('blue').style.display = 'block';
+        document.getElementById('blue').style.backgroundColor = 'blue';
+      }
+    </script>
+  </body>
+</html>
