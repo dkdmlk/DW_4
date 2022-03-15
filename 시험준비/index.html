@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -102,13 +103,19 @@
       /* 메인 색션 */
       .section-main_introduce {
         height: 500px;
-        background-color: white;
         display: flex;
+        background-image: linear-gradient(rgba(155, 151, 151, 0.8), rgba(53, 53, 56, 0.8)),
+     url(img/back1.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
       }
       .section-main_introduce_textbox {
         margin-top: 5%;
-        margin-right: 10%;
+        margin-right: 15%;
         margin-left: 10%;
+        font-size: 22px;
+        color: white;
       }
       .section-main_introduce_textbox span {
         color: red;
@@ -123,9 +130,14 @@
         height: 500px;
         background-color: white;
         display: flex;
+        background-image: linear-gradient(rgba(142, 173, 235, 0.8), rgba(43, 46, 82, 0.8)),
+     url(img/back2.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
       }
       .section-main_introduce__masterdualtextbox {
-        margin-right: 10%;
+        margin-right: 15%;
         margin-left: 10%;
       }
       .section-main_introduce_masterdual img {
@@ -136,10 +148,29 @@
       /* 카드종류 소개 */
       .cardtype_introduce{
         margin-left: 10%;
+        
+      }
+      .section-card{
+        background-image: linear-gradient(rgba(245, 0, 0, 0.8), rgba(241, 117, 68, 0.8)),
+     url(img/back4.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        color: white;
+      }
+      .section-card h3{
+        font-size: 28px;
+      }
+      .section-card p{
+        font-size: 22px;
       }
       .monster_card{
         display: flex;
-        justify-content: space-around;
+        margin: 0 10%;
+      }
+      .monster_card_textbox{
+        margin-left: 14%;
+        color: azure;
       }
       .monster_card_textbox h4{
         color: orange;
@@ -157,7 +188,11 @@
       }
       .masic_card{
         display: flex;
-        justify-content: space-around;
+        margin: 0 10%;
+      }
+      .masic_card_textbox{
+        margin-left: 20%;
+        color: azure;
       }
       .masic_card_textbox h4{
         color: green;
@@ -167,10 +202,20 @@
         width: 270px;
         height: 320px;
       }
+      .masictype {
+        display: flex;
+        flex-direction: column;
+      }
+      .masictype{
+        width: 170px;
+        height: 80px;}
       .trap_card{
         display: flex;
-        justify-content: space-around;
-        
+        margin: 0 10%;
+      }
+      .trap_card_textbox{
+        margin-left: 20%;
+        color: azure;
       }
       .trap_card_textbox h4{
         color: red;
@@ -183,7 +228,13 @@
       /* 소환타입 */
       .section-summerner{
         height: auto;
-        margin-top: 5%;
+        background-image: linear-gradient(rgba(28, 55, 109, 0.8), rgba(43, 46, 82, 0.8)),
+     url(img/back3.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        color: white;
+        font-size: 24px;
       }
       .swiper {
         width: 600px;
@@ -198,13 +249,20 @@
         object-fit: cover;
       }
       .section-summerner_play{
-        margin-top: 15%;
         width: 100%;
         height: auto;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        
+        background: radial-gradient(
+          circle at 42% 100%,
+          #1f0075 4%,
+          #610264 30%,
+          #000000 62%,
+          #8870eb 85%,
+          #ffffff
+        );
+        color: azure;
       }
       .summerner_textbox{
         margin-left: 10%;
@@ -226,7 +284,12 @@
       .section-deck{
         width: 100%;
         height: auto;
-        margin-top: 10%;
+        background-image: linear-gradient(rgba(6, 30, 80, 0.8), rgba(104, 108, 143, 0.8)),
+     url(img/back5.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        color: white;
       }
       .deckrecommend{
         height: auto;
@@ -243,6 +306,7 @@
         margin: 20px;
         cursor: pointer;
         transition: 0.5s;
+        margin-top: 15%;
       }
       .deckrecommend img{
         width: 100%;
@@ -335,6 +399,7 @@
             <br><br>
             <div class="monster_card">
               <img src="img/몬스터.PNG" alt="">
+              <img src="img/효과몬스터.PNG" alt="">
               <div class="monster_card_textbox">
                 <h4>몬스터 카드</h4> <hr><br>
                 <p>유희왕 배틀의 주역</p><br>
@@ -345,6 +410,12 @@
             <br><br>
             <div class="masic_card">
               <img src="img/마법.PNG" alt="">
+              <div class="masictype">
+                <img src="img/의식마법.PNG" alt="">
+                <img src="img/장착마법.PNG" alt="">
+                <img src="img/속공마법.PNG" alt="">
+                <img src="img/지속마법.PNG" alt="">
+              </div>
               <div class="masic_card_textbox">
                 <h4>마법 카드</h4> <hr><br>
                 <p>발동 하는것으로 여러가지 효과를 발생시키는 카드</p>
@@ -352,6 +423,10 @@
             </div><br><br>
             <div class="trap_card">
               <img src="img/함정.PNG" alt="">
+              <div class="masictype">
+                <img src="img/카운터함정.PNG" alt="">
+                <img src="img/지속함정.PNG" alt="">
+              </div>
               <div class="trap_card_textbox">
                 <h4>함정 카드</h4><hr><br>
                 <p>세트를 하고 나서 다음턴까지는 발동할수 없지만</p><br>
