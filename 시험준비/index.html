@@ -5,40 +5,501 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
       }
+      .header {
+        width: 100%;
+        height: 400px;
+        background-image:linear-gradient(rgba(0, 10, 20, 0.8), rgba(4, 10, 20, 0.8)),
+     url(img/logo.jpg);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+      }
+      .header_logo{
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .header_logo h2{
+        font-size: 48px;
+      }
+      .header span {
+	    display: block;
+    	text-shadow: 0 0 80px rgba(255,255,255,.5);
+	    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+	    -webkit-background-clip: text;
+	    background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	    -webkit-animation: aitf 80s linear infinite;
+	    -webkit-transform: translate3d(0,0,0);
+	    -webkit-backface-visibility: hidden;
+      }
+     @-webkit-keyframes aitf {
+	    0% { background-position: 0% 50%; }
+	    100% { background-position: 100% 50%; }
+      }
+      .header button {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        top: 15%;
+        justify-content: space-around;
+        flex-direction: column;
+        right: 0;
+        cursor: pointer;
+      }
+      .menubar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        height: 900%;
+        background-color: black;
+        display: block;
+      }
+      .button_textbox p{
+       font-size: 28px;
+       margin-left: 80%;
+      }
+      .menubarlist {
+        width: 200px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+      }
+      .menubarlist li:hover {
+        border: 3px solid black;
+        background-color: grey;
+        transition: 0.3s;
+      }
+      .menubarlist li{
+        height: 15%;
+      }
+      .menubarlist li a {
+        font-size: 20px;
+        text-decoration-line: none;
+        list-style: none;
+        text-align: center;
+        color: white;
+      }
+      .section {
+        width: 100%;
+        height: 100%;
+      }
+      .section-main_introduce {
+        height: 500px;
+        background-color: white;
+        display: flex;
+      }
+      .section-main_introduce_textbox {
+        margin-top: 5%;
+        margin-right: 10%;
+        margin-left: 10%;
+      }
+      .section-main_introduce_textbox span {
+        color: red;
+      }
+      .section-main_introduce img {
+        width: 200px;
+        height: 300px;
+        margin: 20px;
+      }
+      .section-main_introduce_masterdual {
+        height: 500px;
+        background-color: white;
+        display: flex;
+      }
+      .section-main_introduce__masterdualtextbox {
+        margin-right: 10%;
+        margin-left: 10%;
+      }
+      .section-main_introduce_masterdual img {
+        width: 400px;
+        height: 300px;
+        margin: 20px;
+      }
+      .cardtype_introduce{
+        margin-left: 10%;
+      }
+      .monster_card{
+        display: flex;
+        justify-content: space-around;
+      }
+      .monster_card_textbox h4{
+        color: orange;
+        font-size: 24px;
+      }
+      .monster_card img{
+        width: 270px;
+        height: 320px;
+      }
+      .일반{
+        color: rgb(241, 231, 81);
+      }
+      .효과{
+        color: orange;
+      }
+      .masic_card{
+        display: flex;
+        justify-content: space-around;
+      }
+      .masic_card_textbox h4{
+        color: green;
+        font-size: 24px;
+      }
+      .masic_card img{
+        width: 270px;
+        height: 320px;
+      }
+      .trap_card{
+        display: flex;
+        justify-content: space-around;
+        
+      }
+      .trap_card_textbox h4{
+        color: red;
+        font-size: 24px;
+      }
+      .trap_card img{
+        width: 270px;
+        height: 320px;
+      }
+      .section-summerner{
+        height: auto;
+        margin-top: 5%;
+      }
+      .swiper {
+        width: 600px;
+        height: 600px;
+      }
+      .swiper-slide img {
+        position: relative;
+        left: 20%;
+        top: 10%;
+        width: 350px;
+        height: 500px;
+        object-fit: cover;
+      }
+      .section-summerner_play{
+        margin-top: 15%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+      }
+      .summerner_textbox{
+        margin-left: 10%;
+      }
+      .summerner_card img{
+        width: 300px;
+        height: 300px;
+      }
+      .summerner_card {
+        margin: 20px 20px;
+      }
+      .summerner_card:hover{
+        transform: scale(1.2);
+      }
+      .summerner_card_textbox{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .section-deck{
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+      }
+      .deckrecommend{
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 280px);
+        gap: 50px;
+        margin-left: 10%;
+      }
+      .recommend_deck_textbox{
+        margin-left: 10%;
+      }
+      .deckrecommed_card{
+        border: 1px solid black;
+        margin: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .deckrecommend img{
+        width: 100%;
+        height: 300px;
+      }
+      .deckrecommed_card p {
+        display: none;
+      }
+      .deckrecommed_card:hover{
+         transform: scale(1.1);
+         
+      }
+      .deckrecommed_card:hover p{
+        display: block;
+      }
+      .footer{
+        width: 100%;
+        height: 100px;
+        background-color: black;
+      }
+      .footer ul{
+        display: flex;
+        justify-content: space-around;
+
+      }
+      .footer ul li a{
+        color: white;
+        font-size: 24px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header"></div>
-      <div class="section">
+      <div class="header">
+        <div class="header_logo">
+          <h2><span>유 희 왕</span>
+          <span>MASTER DUEL</span></h2>
+        </div>
+        <button onclick="block()">
+          <div class="button_textbox">
+            <p>+</p>
+          </div>
+          <div class="menubar" id = "menu">
+            <ul class="menubarlist">
+              <li><a href="#introduce_ygo">유희왕 소개</a></li>
+              <li><a href="#cardtype_introduce">카드 타입 소개</a></li>
+              <li><a href="#section-summerner">소환법</a></li>
+              <li><a href="#recommend_deck">추천 덱</a></li>
+            </ul>
+          </div>
+        </button>
+      </div>
+      <div class="section" id="introduce_ygo">
         <div class="section-main">
-          <div class="section-main_introduce"></div>
-          <div class="section-main_introduce_masterdual"></div>
-        </div>
-        <div class="section-card">
-          <div class="card-sumerner"></div>
-          <div class="card-magic_trap"></div>
-        </div>
-        <div class="section-deck">
-          <div class="deckrecommend">
-            <div class="deckrecommed_LD"></div>
-            <div class="deckrecommed_paenteom"></div>
-            <div class="deckrecommed_trage"></div>
-            <div class="deckrecommed_LLtrage"></div>
-            <div class="deckrecommed_numeron"></div>
+          <div class="section-main_introduce">
+            <div class="section-main_introduce_textbox">
+              <h3>유희왕 이란?</h3>
+              <hr />
+              <p>유희왕 은 자신의 덱을 맞춰 상대방과 게임을하여</p>
+              <br /><br />
+              <p>
+                상대방과의 <span>[턴]</span>을 교대로 반복하고 패를 사용하여
+                상대방의 <br /><br />
+                <span>[LP]</span>을 0으로 만드는 게임입니다!
+              </p>
+            </div>
+            <img src="img/ygo.jpg" alt="" />
           </div>
-          <div class="romangdeck">
-            <div class="bule_eyes"></div>
-            <div class="ra"></div>
+          <div class="section-main_introduce_masterdual">
+            <div class="section-main_introduce__masterdualtextbox">
+              <h3>유희왕 마스터 듀얼</h3>
+              <hr />
+              <p>마스터 듀얼은 코나미에서 만든 온라인 유희왕 게임으로</p>
+              <br /><br />
+              <p>[STEM] 과 [모바일]로 게임을 할수 있으며 반 유로 게임입니다.</p>
+              <img src="img/마스터듀얼소개.jpg" alt="" />
+            </div>
+            <img src="img/header_logo.jpg" alt="" />
           </div>
+          <div class="section-card" id="cardtype_introduce">
+            <img src="img/" alt="">
+            <div class="cardtype_introduce">
+              <h3>카드의 종류</h3>
+              <hr />
+              <br>
+              <p>카드는 크게 나누어서 <span>몬스터카드</span>
+              <span>마법카드</span><span>함정카드</span>로
+            나누어 집니다.</div></p>
+            <br><br>
+            <div class="monster_card">
+              <img src="img/몬스터.PNG" alt="">
+              <div class="monster_card_textbox">
+                <h4>몬스터 카드</h4> <hr><br>
+                <p>유희왕 배틀의 주역</p><br>
+                <p><span>[효과]</span>를 가지지않은 [<span class="일반">일반몬스터</span>]</p><br>
+                <p>특수한 효과를 가진 [<span class="효과">효과몬스터</span>]가 있습니다.</p>
+              </div>
+            </div>
+            <br><br>
+            <div class="masic_card">
+              <img src="img/마법.PNG" alt="">
+              <div class="masic_card_textbox">
+                <h4>마법 카드</h4> <hr><br>
+                <p>발동 하는것으로 여러가지 효과를 발생시키는 카드</p>
+              </div>
+            </div><br><br>
+            <div class="trap_card">
+              <img src="img/함정.PNG" alt="">
+              <div class="trap_card_textbox">
+                <h4>함정 카드</h4><hr><br>
+                <p>세트를 하고 나서 다음턴까지는 발동할수 없지만</p><br>
+                <p>강력한 카드가 많고 일반역전 찬스를 만들수있는 카드</p>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="section-summerner" id="section-summerner">
+            <div class="summerner_textbox">
+              <h3>몬스터 소환의 종류</h3><hr>
+            </div>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/싱크로.PNG" alt=""></div>
+                <div class="swiper-slide"><img src="img/엑시즈.PNG" alt=""></div>
+                <div class="swiper-slide"><img src="img/융합.PNG" alt=""></div>
+                <div class="swiper-slide"><img src="img/카오스max.PNG" alt=""></div>
+                <div class="swiper-slide"><img src="img/흉조.jpg" alt=""></div>
+              </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+          </div><br>
+          <div class="section-summerner_play">
+            <div class="summerner_card">
+              <img src="img/싱크로.PNG" alt="">
+              <div class="summerner_card_textbox">
+                <h3>싱크로</h3>
+                <p>[튜너]몬스터 + 튜너외 몬스터 <br>
+                튜너 몬스터와 튜너외 몬스터의 레벨이 합이 <br> 싱크로할 몬스터와 소환가능</p>
+              </div>
+            </div>
+            <div class="summerner_card">
+              <img src="img/엑시즈.PNG" alt="">
+              <div class="summerner_card_textbox">
+                <h3>엑시즈</h3>
+                <p>같은레벨의 몬스터 X (표기갯수) <br>
+                같은레벨의 몬스터가 x수만큼잇으면 <br> 몬스터들을 겹쳐 소환가능</p>
+              </div>
+            </div>
+            <div class="summerner_card">
+              <img src="img/융합.PNG" alt="">
+              <div class="summerner_card_textbox">
+                <h3>융합</h3>
+                <p>표기몬스터 + 표기몬스터 <br>
+                표기몬스터 + 표기몬스터 가 있을때 <br> 융합 마법카드로 소환가능</p>
+              </div>
+            </div>
+            <div class="summerner_card">
+              <img src="img/카오스max.PNG" alt="">
+              <div class="summerner_card_textbox">
+                <h3>의식</h3>
+                <p>의식 마법카드가 있을때 <br>
+                의식소환 몬스터의 레벨에 맞게 패또는 필드에서 <br>카드를 버리는것으로 소환</p>
+              </div>
+            </div>
+            <div class="summerner_card">
+              <img src="img/흉조.jpg" alt="">
+              <div class="summerner_card_textbox">
+                <h3>링크</h3>
+                <p>필드에 링크 몬스터의 숫자만큼 <br>
+                 필드에서 묘지로 버르는것으로 소환</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-deck" id="recommend_deck">
+            <div class="recommend_deck_textbox">
+              <h3>마스터듀얼 추천덱</h3><hr><br>
+            <p>마스터 듀얼을 처음하게 될때 추천하는 티어덱 리스트입니다.</p>
+            </div>
+            <div class="deckrecommend">
+              <div class="deckrecommed_card">
+                <img src="img/엘드리치.jpg" alt="">
+                <div class="deckrecommed_textbox">
+                  <h3>엘드리치 덱</h3>
+                  <p>
+                    황금경 엘드리치를 필두로 함정카드로 <br> 풀어나가는 덱입니다.
+                  <br>특별한 소환법이 없기에 유희왕을 <br> 조금이라도 하신분 처음하더라도 <br>
+                금방 익숙해지고 쉽게할수 있는게 특징이며 <br>만들기도 쉬운특징이 있습니다.</p><br>
+                </div>
+              </div>
+              <div class="deckrecommed_card">
+                <img src="img/론고미언트.jpg" alt="">
+                <div class="deckrecommed_textbox">
+                  <h3>팬텀나이츠 덱</h3>
+                  <p>팬텀나이츠 군의 카드들과
+                    레벨 3의 몬스터들 로 이루어진 덱입니다. <br>
+                    처음하기는 어려우나 익숙해지면 선공은 뚫을수없는
+                    완벽한 집을짓고 후공은 일반역전이 가능한덱입니다.
+                  </p>
+                </div>
+              </div>
+              <div class="deckrecommed_card">
+                <img src="img/흉조.jpg" alt="">
+                <div class="deckrecommed_textbox">
+                  <h3>트라이브게이드 덱</h3>
+                  <p>빠른 특수소환가 한장만으로 가능한 플레이가 가능하며
+                    상대턴에도 강력한 몬스터를 만들수 있는 플레이가 가능합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="deckrecommed_card">
+                <img src="img/누메론네트워크.jpg" alt="">
+                <div class="deckrecommed_textbox">
+                  <h3>누메론 덱</h3>
+                  <p>강력한 후공이 가능한덱이면 누메론 네트워크를 통한
+                    강력한 플레이가 가능합니다. <br> 후공에 상대를 한번에 이기는
+                    플레이가 주가됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <ul>
+              <li><a href="#introduce_ygo">유희왕 소개</a></li>
+              <li><a href="#cardtype_introduce">카드 타입 소개</a></li>
+              <li><a href="#section-summerner">소환법</a></li>
+              <li><a href="#recommend_deck">추천 덱</a></li>
+            </ul>
         </div>
       </div>
     </div>
+    <script>
+      function block(){
+        var block = document.getElementById('menu').style.display;
+          if(block == 'none'){
+          document.getElementById('menu').style.display = 'block';
+          return 0;  
+          }
+        document.getElementById('menu').style.display = 'none';  
+        }
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        //direction: 'vertical',
+        autoplay: {
+          delay: 3000,
+        },
+        loop: true,
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
   </body>
 </html>
