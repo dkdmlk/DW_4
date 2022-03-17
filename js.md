@@ -104,3 +104,13 @@ $('.classNAme').css('display','block')
 - chidren
 - **\*** val, text, focus
 - \*attr
+
+## 바닐라js -> jquery
+
+- document -> $
+- get -> ('')
+
+```
+document.getELementByid('name').style.display = 'none'
+ -> $('#name')hide();
+```
