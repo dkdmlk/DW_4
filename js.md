@@ -123,3 +123,8 @@ Jquery
 - append : 포스트윗(땟다 붙힘) & append to
 - children : \*부모기준 (자식만)- 자식정보를 보고싶을 때.(배열형태로 가져옴) & find
 - show&hide
+
+var val = $('#name').children();
+이 돼는이유 children()은 리턴값을 가지고 있기떄문에(메소드)
+
+min(압축된 파일)
