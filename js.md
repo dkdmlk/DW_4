@@ -114,3 +114,12 @@ $('.classNAme').css('display','block')
 document.getELementByid('name').style.display = 'none'
  -> $('#name')hide();
 ```
+
+# 4
+
+Jquery
+
+- on :js 는 매개변수 사용가능 $('#name').on('이벤트' , funchion() { } ) // 쓰는 이유 프로젝트가 커지면 변수이름 짓기가 어려움
+- append : 포스트윗(땟다 붙힘) & append to
+- children : \*부모기준 (자식만)- 자식정보를 보고싶을 때.(배열형태로 가져옴) & find
+- show&hide
