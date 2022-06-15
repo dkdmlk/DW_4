@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        margin: 0 20%;
+        width: 900px;
+        height: 800px;
+        background-color: rgb(180, 179, 179);
+        border: 50px solid white;
+        border-radius: 10%;
+        
+    }
+    .header{
+        text-align: center;
+        position: relative;
+        margin: 0 50px;
+    }
+    h1{
+        color: aliceblue;
+    }
+    .math-button{
+        padding: 20px 0;
+        text-align: center;
+    }
+    .number-button{
+        text-align: center;
+    }
+    button{
+        box-shadow: 5px 5px 5px gray;
+        width: 150px;
+        height: 50px;
+        margin: 15px 5px;
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 5%;
+        cursor: pointer;
+    }
+    #window{
+        width: 800px;
+        height: 100px;
+        background-color: rgb(90, 238, 90);
+        margin: 10px 0;
+        border: 1px solid rgb(180, 179, 179);
+    }
+    #window p{
+        color: black;
+        font-size: 18px;
+    }
+    #window span{
+        color: black;
+        font-size: 18px;
+    }
+    .number-button{
+        margin: 10px 0;
+    }
+    .number-button button{
+        background-color: rgb(61, 59, 59);
+        border: 1px solid #777;
+        box-shadow: 5px 5px 5px gray;
+        border-radius: 5%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>계산기</h1>
+            <!-- 식보여주기 -->
+            <!-- <input type="text" id="window" value="" disabled> -->
+            <div class="window" id="window">
+                <p><span id="span"></span></p>
+            </div>
+            <!-- 결과값 -->
+            <!-- <input type="hidden" id="result" value=""> -->
+            <div class="hiddenResult" type="hidden"></div>
+            <!-- 이전 결과값 -->
+            <input type="hidden" id="EXPWindow" value="">
+            <!-- 계산 -->
+            <input type="hidden" id="Calculation" value="">
+        </div>
+        <div class="math-button">
+            <div class="math1-button">
+                <!-- 마이너스제곱 4-¹ = 0.25-->
+                <button type="button" onclick="math1button()" class="math">x-¹</button>
+                <!-- 제곱 2² = 4 -->
+                <button type="button" onclick="math2button()" class="math">x²</button>
+                <!-- 제곱 2⁴ = 16 -->
+                <button type="button" onclick="math3button()"class="math">xⁿ</button>
+                <!-- 로그 aⁿ=b  logab=n log₃9=2(3²=9) -->
+                <button type="button" onclick="math4button()" class="math">log</button>
+                <!-- 루트 7√3 = √49x√3 = √147 -->
+                <button type="button" onclick="math5button()" class="math">√</button>
+            </div>
+            <div class="math2-button">
+                <!-- function getCircleY(radians, radius) {
+                return Math.sin(radians) * radius;} -->
+                <button type="button" class="math">sin</button>
+                <!-- function getCircleX(radians, radius) {
+                return Math.cos(radians) * radius;} -->
+                <button type="button" class="math">cos</button>
+                <!-- function getTanFromDegrees(degrees) {
+                return Math.tan(degrees * Math.PI / 180);} -->
+                <button type="button" class="math">tan</button>
+                <!-- () -->
+                <button type="button" class="math">(</button>
+                <button type="button" class="math">)</button>
+            </div>
+        </div>
+        <div class="number-button">
+            <div class="number-Highbutton">
+                <button type="button" id="number7">7</button>
+                <button type="button" id="number8">8</button>
+                <button type="button" id="number9">9</button>
+                <!-- 식지우기 -->
+                <button type="button" id="DELET">DEL</button>
+                <!-- 전체지우기 -->
+                <button type="button" id="AC">AC</button>
+            </div>
+            <div class="number-middleButton">
+                <button type="button" id="number4">4</button>
+                <button type="button" id="number5">5</button>
+                <button type="button" id="number6">6</button>
+                <button type="button" id="multiply">×</button>
+                <button type="button" id="divide">÷</button>
+            </div>
+            <div class="number-rowButton">
+                <button type="button" id="number1">1</button>
+                <button type="button" id="number2">2</button>
+                <button type="button" id="number3">3</button>
+                <button type="button" id="plus">+</button>
+                <button type="button" id="maineoseu">-</button>
+            </div>
+            <div class="number-lastButton">
+                <button type="button" id="number0">0</button>
+                <button type="button" id="decimalpoint">.</button>
+                <!-- EXP : 3.14 -->
+                <button type="button" id="exp">EXP</button>
+                 <!--ANS : 전 계산 답 가져오기  -->
+                <button type="button" id="answered">ANS</button>
+                <button type="button" id="college">=</button>
+            </div>
+        </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        console.log($('.number-rowButton').children())
+        var windo = $('#span').text()
+        var number0 = $('#number0').text();
+        var number1 = $('#number1').text();
+        var number2 = $('#number2').text();
+        var number3 = $('#number3').text();
+        var number4 = $('#number4').text();
+        var number5 = $('#number5').text();
+        var number6 = $('#number6').text();
+        var number7 = $('#number7').text();
+        var number8 = $('#number8').text();
+        var number9 = $('#number9').text();
+        var decimalpoint = $('#decimalpoint').text()
+        var plus = $('#plus').text();
+        var maineoseu = $('#maineoseu').text();
+        var exp = $('#exp').text();
+        var multiply = $('#multiply').text();
+        var divide = $('#divide').text()
+        $('#number0').click(function(){
+            $('#span').html(windo += number0)
+        })
+        $('#number1').click(function(){
+            $('#span').html(windo += number1)
+        })
+        $('#number2').click(function(){
+            $('#span').html(windo += number2)
+        })
+        $('#number3').click(function(){
+            $('#span').html(windo += number3)
+        })
+        $('#number4').click(function(){
+            $('#span').html(windo += number4)
+        })
+        $('#number5').click(function(){
+            $('#span').html(windo += number5)
+        })
+        $('#number6').click(function(){
+            $('#span').html(windo += number6)
+        })
+        $('#number7').click(function(){
+            $('#span').html(windo += number7)
+        })
+        $('#number8').click(function(){
+            $('#span').html(windo += number8)
+        })
+        $('#number9').click(function(){
+            $('#span').html(windo += number9)
+        })
+        $('#decimalpoint').click(function(){
+            $('#span').html(windo += decimalpoint)
+        })
+        $('#plus').click(function(){
+            $('#span').html(windo += plus)
+        })
+        $('#maineoseu').click(function(){
+            $('#span').html(windo += maineoseu)
+        })
+        $('#exp').click(function(){
+            $('#span').html(windo +=  '𝞹')
+        })
+        $('#multiply').click(function(){
+            $('#span').html(windo += multiply)
+        })
+        $('#divide').click(function(){
+            $('#span').html(windo += divide)
+        })
+    </script>
+</body>
+</html>
